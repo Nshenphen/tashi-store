@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+body {
+  background-color: rgba(133, 80, 255, 0.534);
+}
+</style>
+</head>
+<body>
+  
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="medium-list">
+  <div class="list-viewer-wrapper">
+    <div class="list-header-title">Register</div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" novalidate>
+      <div class="form-container">
+        
+      
+       
+          
+                      
+              
+               Name:
+               <input id="name"
+               formControlName="name"
+                 [(ngModel)]="user.name"
+                 input type="text" class="form-control" id="name" placeholder="Enter First Name" name="fname">
+              
+                 
+       
+      
+
+             Email:
+            <input id="email"
+                   matInput
+                   formControlName="email"
+                   [(ngModel)]="user.email"
+                   type="text" class="form-control" id="fname" placeholder="Enter Your email" name="email">
+    
+             password:
+            <input id="password"
+                   matInput
+                   formControlName="password"
+                   [(ngModel)]="user.password"
+                  
+                   [type]="hide ? 'password':'text'" class="form-control" id="fname" placeholder="Enter password" name="password">
+                   <mat-icon matSuffix (click)="hide = !hide">
+                   {{hide ? 'visibility' : 'visibility_off'}} </mat-icon>
+
+
+         
+                
+           
+           
+              
+        
+         
+
+  
+
+          <button mat-button type="submit" 
+                  class="mat-raised-button mat-primary" 
+                  [disabled]="!registerForm.valid">Register</button>
+          <button mat-button routerLink="/login" class="divider"></button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<style>
+body {
+  background-color: rgba(133, 80, 255, 0.534);
+}
+</style>
+</head>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script sc="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="medium-list">
+    <div class="list-viewer-wrapper">
+      <div class="list-header-title">login</div>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onLoginSubmit()" novalidate>
+        <div class="form-container">  
+       
+          Email:
+          <input id="email"
+                 matInput
+                 formControlName="email"
+                 [(ngModel)]="user.email"
+                 type="text" class="form-control" id="fname" placeholder="Enter Your email" name="email">
+            
+           password:
+          <input id="password"
+                 matInput
+                 formControlName="password"
+                 [(ngModel)]="user.password"
+                
+                 [type]="hide ? 'password':'text'" class="form-control" id="fname" placeholder="Enter password" name="password">
+                 <mat-icon matSuffix (click)="hide = !hide">
+                 {{hide ? 'visibility' : 'visibility_off'}} </mat-icon>
+                
+         
+            
+  
+
+
+            <button mat-button type="submit" 
+                    class="mat-raised-button mat-primary" 
+                    [disabled]="!loginForm.valid">
+            <button mat-button routerLink="/home" class="divider">login</button></button>
+            
+        </div>
+      </form>
+    </div>
+  </div>
+  
